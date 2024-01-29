@@ -1,7 +1,8 @@
 import "./App.css";
 import Auth from "./Pages/Auth/Auth";
 import Profile from "./Pages/Profiles/Profile";
-import Home from "./Pages/Home/Home.jsx";
+// import Home from "./pages/home/home";
+import Home from "./Pages/home/home.jsx";
 
 function App() {
   return (
