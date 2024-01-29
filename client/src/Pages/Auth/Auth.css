@@ -1,0 +1,118 @@
+.Auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 4rem;
+  position: relative;
+}
+.Auth > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a-left {
+  gap: 2rem;
+}
+
+.a-left > img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.Webname > h1 {
+  font-size: 3rem;
+  background-color: red;
+  background-image: var(--buttonBg);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+.Webname > h6 {
+  font-size: 0.85rem;
+}
+
+.infoForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.infoInput {
+  border: none;
+  outline: none;
+  background-color: var(--inputColor);
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1;
+}
+
+.infoForm > div {
+  display: flex;
+  gap: 1rem;
+  height: 2rem;
+  width: 90%;
+}
+
+.infoButton {
+  width: 6rem;
+  height: 2rem;
+  align-self: flex-end;
+}
+
+.authForm {
+  background-color: var(--cardColor);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.authForm > div {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.out {
+  margin: 0;
+  padding: 0;
+}
+.out:hover {
+  cursor: pointer;
+}
+
+.active {
+  margin: 0;
+  padding: 0;
+  animation: shake 1s both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
