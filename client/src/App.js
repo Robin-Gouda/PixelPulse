@@ -10,8 +10,8 @@ function App() {
       <div className="blur blurone"></div>
       <div className="blur blurtwo"></div>
       {/* <Home /> */}
-      {/* <Profile /> */}
-      <Auth />
+      <Profile />
+      {/* <Auth /> */}
     </div>
   );
 }
