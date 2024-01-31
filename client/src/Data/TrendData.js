@@ -19,4 +19,8 @@ export const TrendData = [
     name: "Elon Musk",
     shares: 95,
   },
+  {
+    name: "Need For Speed ",
+    shares: 20,
+  },
 ];

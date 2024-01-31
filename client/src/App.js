@@ -1,6 +1,6 @@
 import "./App.css";
 import Auth from "./Pages/Auth/Auth";
-// import Profile from "./Pages/Profiles/Profile";
+import Profile from "./Pages/Profiles/Profile";
 // import Home from "./pages/home/home";
 import Home from "./Pages/home/home.jsx";
 
@@ -9,9 +9,9 @@ function App() {
     <div className="App">
       <div className="blur blurone"></div>
       <div className="blur blurtwo"></div>
-      <Home />
-      {/* <Profiles/> */}
-      {/* <Auth /> */}
+      {/* <Home /> */}
+      {/* <Profile /> */}
+      <Auth />
     </div>
   );
 }
