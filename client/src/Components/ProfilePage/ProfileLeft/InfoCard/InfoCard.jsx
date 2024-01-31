@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./InfoCard.css";
+import ProfileModal from "../../ProfileRight/ProfileModal";
 import { UilPen } from "@iconscout/react-unicons";
-// import ProfileModal from "./ProfileModal";
 
 const InfoCard = () => {
   const [modalOpened, setModalOpened] = useState(false);
@@ -15,10 +15,10 @@ const InfoCard = () => {
             height="1.2rem"
             onClick={() => setModalOpened(true)}
           />
-          {/* <ProfileModal
-            modalOpened={modalOpened} 
+          <ProfileModal
+            modalOpened={modalOpened}
             setModalOpened={setModalOpened}
-          /> */}
+          />
         </div>
       </div>
       <div className="info">
