@@ -2,27 +2,25 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import "dotenv/config";
-// import AuthRoutes from "./Routes/AuthRoute.js";
+import AuthRoute from "./Routes/AuthRoute.js";
+import UserRoute from "./Routes/UserRoute.js";
 
 //Routes
 const app = express();
 
 //Enveronment variables
-const port = process.env.DBPORT;
+const port = process.env.DBPORT || 5001;
 const database = process.env.DATABASE;
 
 //Middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
-//usage of routes
-// app.use("/auth", AuthRoutes);
+mongoose
+  .connect(database)
+  .then(() => app.listen(port, () => console.log(`http://localhost:${port}`)))
+  .catch((error) => console.log(error));
 
-//making a serrver to a perticular port
-try {
-  mongoose
-    .connect(database)
-    .then(() => app.listen(port, console.log(`http://localhost:${port}`)));
-} catch (error) {
-  console.log(error);
-}
+//usage of routes
+app.use("/auth", AuthRoute);
+app.use("/user", UserRoute);
