@@ -9,11 +9,13 @@ import {
   UilPlayCircle,
   UilTimes,
 } from "@iconscout/react-unicons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { uploadImage, uploadPost } from "../../../Action/uploadAction";
 
 const PostShare = () => {
   const [image, setImage] = useState(null);
   const imageRef = useRef();
+  const dispatch = useDispatch();
   const desc = useRef();
   const { user } = useSelector((state) => state.authReducer.authData);
   const onImageChange = (e) => {
@@ -38,7 +40,13 @@ const PostShare = () => {
       data.append("file", image);
       newPost.image = filename;
       console.log(newPost);
+      try {
+        dispatch(uploadImage(data)); //action to upload image
+      } catch (error) {
+        console.log(error);
+      }
     }
+    dispatch(uploadPost(newPost));
   };
 
   return (
