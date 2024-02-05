@@ -2,6 +2,7 @@ import "./App.css";
 import Auth from "./Pages/Auth/Auth";
 import Profile from "./Pages/Profiles/Profile";
 import Home from "./Pages/home/home.jsx";
+import { useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
