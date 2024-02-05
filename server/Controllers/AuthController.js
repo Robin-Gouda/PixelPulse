@@ -1,6 +1,9 @@
 import UserModel from "../Models/userModel.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import "dotenv/config";
 
+const Key = process.env.JWT_KEY;
 //Registering User (Try for Unique user )
 export const registerUser = async (req, res) => {
   // const { username, password, firstname, lastname } = req.body;
@@ -20,8 +23,14 @@ export const registerUser = async (req, res) => {
     if (oldUser) {
       return res.status(400).json({ message: "user Already exist" });
     }
-    await newUser.save();
-    res.status(200).json(newUser);
+    const user = await newUser.save();
+
+    const token = jwt.sign({ username: user.username, id: user._id }, Key, {
+      expiresIn: "1h",
+    });
+    // let responseObject = user;
+    res.status(200).send({ user, token });
+    // console.log(token);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -37,9 +46,14 @@ export const loginUser = async (req, res) => {
     if (user) {
       const validity = await bcrypt.compare(password, user.password);
 
-      validity
-        ? res.status(200).json(user)
-        : res.status(400).json({ Message: "Wrong password" });
+      if (!validity) {
+        res.status(400).json({ Message: "Wrong password" });
+      } else {
+        const token = jwt.sign({ username: user.username, id: user._id }, Key, {
+          expiresIn: "1h",
+        });
+        res.status(200).send({ user, token });
+      }
     } else {
       res.status(404).json({ Message: "User not found" });
     }
