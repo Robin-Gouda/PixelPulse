@@ -11,6 +11,10 @@ import UploadRoute from "./Routes/UploadRoute.js";
 //Routes
 const app = express();
 
+//serve image from public
+app.use(express.static("public"));
+app.use("/images", express.static("images"));
+
 //Enveronment variables
 const port = process.env.DBPORT || 5001;
 const database = process.env.DATABASE;
