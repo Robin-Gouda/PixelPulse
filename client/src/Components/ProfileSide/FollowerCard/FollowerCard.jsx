@@ -2,11 +2,20 @@ import React, { useEffect, useState } from "react";
 import "./FollowerCard.css";
 import { Followers } from "../../../Data/FollowersData";
 import Users from "../../User/Users";
+import { useSelector } from "react-redux";
+import { getAllUser } from "../../../API/UserRequest";
 
 const FollowerCard = () => {
   const [persons, setPersons] = useState([]);
+  const { user } = useSelector((state) => state.authReducer.authData);
+
   useEffect(() => {
-    const fetchPersons = async () => {};
+    const fetchPersons = async () => {
+      const { data } = await getAllUser();
+      setPersons(data);
+      console.log(data);
+    };
+    fetchPersons();
   }, []);
   return (
     <div className="FollowersCard">
