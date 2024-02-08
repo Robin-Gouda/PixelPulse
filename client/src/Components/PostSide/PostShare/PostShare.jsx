@@ -29,7 +29,7 @@ const PostShare = () => {
 
   const reset = () => {
     setImage(null);
-    desc = "";
+    desc.current.value = "";
   };
 
   const handleSubmit = (e) => {
