@@ -39,3 +39,10 @@
   height: 2rem;
   padding: 0px 20px 0px 20px;
 }
+
+.UnfollowButton {
+  color: var(--orange);
+  border: 2px solid var(--orange);
+  cursor: pointer;
+  background: transparent;
+}
