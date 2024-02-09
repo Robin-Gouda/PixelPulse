@@ -13,15 +13,17 @@ const FollowerCard = () => {
     const fetchPersons = async () => {
       const { data } = await getAllUser();
       setPersons(data);
-      // console.log(data);
+      console.log(data);
     };
     fetchPersons();
   }, []);
   return (
     <div className="FollowersCard">
       <h3>People you Would like to know</h3>
-      {Followers.map((person, id) => {
-        return <Users person={person} key={id} />;
+      {persons.map((person, id) => {
+        if (person._id !== user._id) {
+          return <Users person={person} key={id} />;
+        }
       })}
     </div>
   );
