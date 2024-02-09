@@ -26,7 +26,7 @@ const Posts = () => {
       {loading
         ? "Fetching Posts..."
         : posts.map((post, id) => {
-            return <Post data={post} />;
+            return <Post data={post} id={id} />;
           })}
     </div>
   );

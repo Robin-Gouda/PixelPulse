@@ -135,7 +135,7 @@ function ProfileModal({ modalOpened, setModalOpened, data }) {
             />
           </div>
           {useEffect(() => {
-            console.log("profilepicture from userModel");
+            // console.log("profilepicture from userModel");
           }, [])}
           <div>
             Profile Image

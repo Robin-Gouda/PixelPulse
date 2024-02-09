@@ -6,11 +6,11 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const ProfileCard = ({ location }) => {
-  const profilePage = false;
   const posts = useSelector((state) => state.postReducer.posts);
   const { user } = useSelector((state) => state.authReducer.authData);
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
   // console.log(location);
+  // const profilePage = false;
 
   return (
     <div className="ProfileCard">
