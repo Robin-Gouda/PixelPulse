@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./FollowerCard.css";
-import { Followers } from "../../../Data/FollowersData";
+// import { Followers } from "../../../Data/FollowersData";
 import Users from "../../User/Users";
 import { useSelector } from "react-redux";
 import { getAllUser } from "../../../API/UserRequest";
@@ -20,9 +20,7 @@ const FollowerCard = () => {
     <div className="FollowersCard">
       <h3>People you Would like to know</h3>
       {persons.map((person, id) => {
-        if (person._id !== user._id) {
-          return <Users person={person} key={id} />;
-        }
+        if (person._id !== user._id) return <Users person={person} key={id} />;
       })}
     </div>
   );

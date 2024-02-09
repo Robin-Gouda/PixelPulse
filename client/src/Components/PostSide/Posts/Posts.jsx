@@ -4,7 +4,7 @@ import "./Posts.css";
 import Post from "./Post/Post";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import authReducer from "../../../Reducers/AuthReducer";
+// import authReducer from "../../../Reducers/AuthReducer";
 import { getTimelinePosts } from "../../../Action/postAction";
 
 const Posts = () => {
@@ -15,11 +15,6 @@ const Posts = () => {
   useEffect(() => {
     dispatch(getTimelinePosts(user._id));
   }, []);
-  // console.log(
-  //   posts.map((post, id) => {
-  //     return post;
-  //   })
-  // );
   return (
     <div className="Posts">
       {/* {postsData.map((post, id) => { */}
