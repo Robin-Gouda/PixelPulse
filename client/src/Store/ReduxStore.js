@@ -19,6 +19,7 @@ function loadFromLocalStorage() {
   try {
     const serializedStore = window.localStorage.getItem("store");
     if (serializedStore === null) return undefined;
+    // console.log(serializedStore);
     return JSON.parse(serializedStore);
   } catch (e) {
     console.log(e);

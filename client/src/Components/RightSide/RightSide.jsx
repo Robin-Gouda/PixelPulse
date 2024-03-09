@@ -18,7 +18,9 @@ const RightSide = () => {
         </Link>
         <UilSetting />
         <img src={Notification} alt="Notifications" />
-        <img src={Comment} alt="Comments" />
+        <Link to="../chat">
+          <img src={Comment} alt="Comments" />
+        </Link>
       </div>
 
       <TrendCard />
